@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "updatedAt": null,
+  "primary": [
+    { "id": "home", "label": "Home", "path": "/index.html" }
+  ],
+  "footer": [],
+  "utility": []
+}

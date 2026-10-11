@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXORA Portfolio — Premium Interactive Portfolio Platform showcasing enterprise demo systems across multiple industries.">
+  <title>NEXORA Portfolio</title>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/cursor.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23D4AF37' rx='16' width='100' height='100'/><text x='50' y='68' font-size='50' font-weight='700' text-anchor='middle' fill='%23050505' font-family='system-ui'>N</text></svg>">
+</head>
+<body>
+
+  <!-- ═══ Search Overlay ═══ -->
+  <div class="search-overlay">
+    <div class="search-overlay__container">
+      <div class="search-overlay__input-wrapper">
+        <svg class="search-overlay__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" class="search-overlay__input" placeholder="Search demos, components, industries..." aria-label="Search">
+        <kbd class="search-overlay__shortcut">ESC</kbd>
+      </div>
+      <div class="search-overlay__results">
+        <div class="search-overlay__empty">Start typing to search across all content</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Navigation ═══ -->
+  <header class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="NEXORA Portfolio Home">
+        <span class="navbar__logo-icon">N</span>
+        <span class="navbar__logo-text">
+          <span class="navbar__logo-name">NEXORA</span>
+          <span class="navbar__logo-suffix">Portfolio</span>
+        </span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Main navigation">
+        <a href="index.html" class="navbar__link active">Home</a>
+        <a href="pages/industries.html" class="navbar__link">Industries</a>
+        <a href="pages/demo-systems.html" class="navbar__link">Demo Systems</a>
+        <a href="pages/components.html" class="navbar__link">Components</a>
+        <a href="pages/design-systems.html" class="navbar__link">Design Systems</a>
+        <a href="pages/about.html" class="navbar__link">About</a>
+        <a href="pages/contact.html" class="navbar__link">Contact</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="navbar__search" data-search-trigger aria-label="Open search">
+          <svg class="navbar__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="navbar__search-text">Search</span>
+          <kbd class="navbar__search-shortcut">Ctrl K</kbd>
+        </button>
+        <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="navbar__toggle-line"></span>
+          <span class="navbar__toggle-line"></span>
+          <span class="navbar__toggle-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile">
+      <nav class="navbar__mobile-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="navbar__mobile-link active">Home</a>
+        <a href="pages/industries.html" class="navbar__mobile-link">Industries</a>
+        <a href="pages/demo-systems.html" class="navbar__mobile-link">Demo Systems</a>
+        <a href="pages/components.html" class="navbar__mobile-link">Components</a>
+        <a href="pages/design-systems.html" class="navbar__mobile-link">Design Systems</a>
+        <a href="pages/about.html" class="navbar__mobile-link">About</a>
+        <a href="pages/contact.html" class="navbar__mobile-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ Hero Section ═══ -->
+    <section class="hero-section section section--hero">
+      <div class="hero-gradient"></div>
+      <div class="floating-gradient" style="top: 10%; right: 20%;"></div>
+      <div class="container hero-section__container">
+        <div class="hero-section__content">
+          <div class="hero-section__label reveal">
+            <span class="status-dot"></span>
+            Enterprise Portfolio Platform
+          </div>
+          <h1 class="hero-section__title reveal reveal--stagger-1">
+            Premium Demo Systems<br>
+            <span class="text-accent">Across Every Industry</span>
+          </h1>
+          <p class="hero-section__description reveal reveal--stagger-2">
+            A curated collection of production-ready interface systems, design patterns, and interactive prototypes built for enterprise teams who demand excellence.
+          </p>
+          <div class="hero-section__actions reveal reveal--stagger-3">
+            <a href="pages/demo-systems.html" class="btn btn--primary btn--lg btn-ripple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Explore Demo Systems
+            </a>
+            <a href="pages/components.html" class="btn btn--secondary btn--lg">
+              Browse Components
+            </a>
+          </div>
+        </div>
+        <div class="hero-section__visual reveal reveal--stagger-4">
+          <div class="hero-mockup">
+            <div class="hero-mockup__header">
+              <div class="hero-mockup__dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="hero-mockup__title">NEXORA Dashboard</div>
+            </div>
+            <div class="hero-mockup__body">
+              <div class="hero-mockup__sidebar">
+                <div class="hero-mockup__nav-item active"></div>
+                <div class="hero-mockup__nav-item"></div>
+                <div class="hero-mockup__nav-item"></div>
+                <div class="hero-mockup__nav-item"></div>
+                <div class="hero-mockup__nav-item"></div>
+              </div>
+              <div class="hero-mockup__main">
+                <div class="hero-mockup__stats">
+                  <div class="hero-mockup__stat"></div>
+                  <div class="hero-mockup__stat"></div>
+                  <div class="hero-mockup__stat"></div>
+                  <div class="hero-mockup__stat"></div>
+                </div>
+                <div class="hero-mockup__chart">
+                  <div class="hero-mockup__chart-line"></div>
+                </div>
+                <div class="hero-mockup__table">
+                  <div class="hero-mockup__row"></div>
+                  <div class="hero-mockup__row"></div>
+                  <div class="hero-mockup__row"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Portfolio Statistics ═══ -->
+    <section class="stats-section section section--compact">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat reveal">
+            <div class="stat__value stat__value--accent counter" data-counter="12" data-counter-suffix="+">0</div>
+            <div class="stat__label">Industries</div>
+            <div class="stat__sublabel">Specialized sectors</div>
+          </div>
+          <div class="stat reveal reveal--stagger-1">
+            <div class="stat__value counter" data-counter="200" data-counter-suffix="+">0</div>
+            <div class="stat__label">Demo Systems</div>
+            <div class="stat__sublabel">Production-ready interfaces</div>
+          </div>
+          <div class="stat reveal reveal--stagger-2">
+            <div class="stat__value counter" data-counter="50" data-counter-suffix="+">0</div>
+            <div class="stat__label">Components</div>
+            <div class="stat__sublabel">Reusable UI elements</div>
+          </div>
+          <div class="stat reveal reveal--stagger-3">
+            <div class="stat__value counter" data-counter="6" data-counter-suffix="">0</div>
+            <div class="stat__label">Design Systems</div>
+            <div class="stat__sublabel">Complete themed kits</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider divider--accent"></div>
+
+    <!-- ═══ Industries Preview ═══ -->
+    <section class="industries-section section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Industries</div>
+          <h2 class="section-title">Specialized for Every Sector</h2>
+          <p class="section-description">Production-ready demo systems tailored to industry-specific workflows, compliance requirements, and user expectations.</p>
+        </div>
+
+        <div class="industries-grid grid grid--4">
+          <a href="pages/industries.html#medical" class="industry-card card--interactive reveal">
+            <div class="industry-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h4 class="industry-card__title">Medical</h4>
+            <span class="industry-card__count">Healthcare interfaces</span>
+            <span class="industry-card__status industry-card__status--active"></span>
+          </a>
+
+          <a href="pages/industries.html#construction" class="industry-card card--interactive reveal reveal--stagger-1">
+            <div class="industry-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+            </div>
+            <h4 class="industry-card__title">Construction</h4>
+            <span class="industry-card__count">Project management</span>
+            <span class="industry-card__status industry-card__status--active"></span>
+          </a>
+
+          <a href="pages/industries.html#finance" class="industry-card card--interactive reveal reveal--stagger-2">
+            <div class="industry-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4 class="industry-card__title">Finance</h4>
+            <span class="industry-card__count">Banking & trading</span>
+            <span class="industry-card__status industry-card__status--active"></span>
+          </a>
+
+          <a href="pages/industries.html#education" class="industry-card card--interactive reveal reveal--stagger-3">
+            <div class="industry-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h4 class="industry-card__title">Education</h4>
+            <span class="industry-card__count">Learning platforms</span>
+            <span class="industry-card__status industry-card__status--active"></span>
+          </a>
+        </div>
+
+        <div class="section-cta reveal">
+          <a href="pages/industries.html" class="btn btn--secondary">
+            View All Industries
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ Featured Demo Systems ═══ -->
+    <section class="demos-section section">
+      <div class="container">
+        <div class="section-header section-header--left reveal">
+          <div class="section-label">Featured</div>
+          <h2 class="section-title">Latest Demo Systems</h2>
+          <p class="section-description">Recently added production-ready interfaces ready for exploration and integration.</p>
+        </div>
+
+        <div class="demos-grid">
+          <div class="preview-card reveal">
+            <div class="preview-card__thumb">
+              <div class="preview-card__thumb-placeholder">
+                <div class="preview-card__thumb-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+              </div>
+              <span class="badge badge--gold" style="position: absolute; top: 12px; left: 12px;">New</span>
+            </div>
+            <div class="preview-card__content">
+              <div class="preview-card__header">
+                <div>
+                  <h4 class="preview-card__title">Hospital Management Dashboard</h4>
+                  <span class="preview-card__category">Medical / Dashboard</span>
+                </div>
+              </div>
+              <div class="preview-card__tags">
+                <span class="tag tag--accent">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Healthcare</span>
+              </div>
+              <div class="preview-card__actions">
+                <a href="pages/demo-systems.html" class="btn btn--primary btn--sm btn-ripple">Open Demo</a>
+                <button class="btn btn--ghost btn--sm">Preview</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal reveal--stagger-1">
+            <div class="preview-card__thumb">
+              <div class="preview-card__thumb-placeholder">
+                <div class="preview-card__thumb-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                </div>
+              </div>
+              <span class="badge badge--gold" style="position: absolute; top: 12px; left: 12px;">New</span>
+            </div>
+            <div class="preview-card__content">
+              <div class="preview-card__header">
+                <div>
+                  <h4 class="preview-card__title">Trading Platform Interface</h4>
+                  <span class="preview-card__category">Finance / Trading</span>
+                </div>
+              </div>
+              <div class="preview-card__tags">
+                <span class="tag tag--accent">Vue</span>
+                <span class="tag">Real-time</span>
+                <span class="tag">Charts</span>
+              </div>
+              <div class="preview-card__actions">
+                <a href="pages/demo-systems.html" class="btn btn--primary btn--sm btn-ripple">Open Demo</a>
+                <button class="btn btn--ghost btn--sm">Preview</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal reveal--stagger-2">
+            <div class="preview-card__thumb">
+              <div class="preview-card__thumb-placeholder">
+                <div class="preview-card__thumb-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="preview-card__content">
+              <div class="preview-card__header">
+                <div>
+                  <h4 class="preview-card__title">Hotel Booking System</h4>
+                  <span class="preview-card__category">Hospitality / Booking</span>
+                </div>
+              </div>
+              <div class="preview-card__tags">
+                <span class="tag tag--accent">Next.js</span>
+                <span class="tag">Booking</span>
+                <span class="tag">Payments</span>
+              </div>
+              <div class="preview-card__actions">
+                <a href="pages/demo-systems.html" class="btn btn--primary btn--sm btn-ripple">Open Demo</a>
+                <button class="btn btn--ghost btn--sm">Preview</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal reveal--stagger-3">
+            <div class="preview-card__thumb">
+              <div class="preview-card__thumb-placeholder">
+                <div class="preview-card__thumb-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="preview-card__content">
+              <div class="preview-card__header">
+                <div>
+                  <h4 class="preview-card__title">Learning Management System</h4>
+                  <span class="preview-card__category">Education / LMS</span>
+                </div>
+              </div>
+              <div class="preview-card__tags">
+                <span class="tag tag--accent">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+              </div>
+              <div class="preview-card__actions">
+                <a href="pages/demo-systems.html" class="btn btn--primary btn--sm btn-ripple">Open Demo</a>
+                <button class="btn btn--ghost btn--sm">Preview</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal reveal--stagger-4">
+            <div class="preview-card__thumb">
+              <div class="preview-card__thumb-placeholder">
+                <div class="preview-card__thumb-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="preview-card__content">
+              <div class="preview-card__header">
+                <div>
+                  <h4 class="preview-card__title">Construction Safety Portal</h4>
+                  <span class="preview-card__category">Construction / Safety</span>
+                </div>
+              </div>
+              <div class="preview-card__tags">
+                <span class="tag tag--accent">Angular</span>
+                <span class="tag">Forms</span>
+                <span class="tag">Compliance</span>
+              </div>
+              <div class="preview-card__actions">
+                <a href="pages/demo-systems.html" class="btn btn--primary btn--sm btn-ripple">Open Demo</a>
+                <button class="btn btn--ghost btn--sm">Preview</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-card reveal reveal--stagger-5">
+            <div class="preview-card__thumb">
+              <div class="preview-card__thumb-placeholder">
+                <div class="preview-card__thumb-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2 6.3l-6.4 2.1l2-6.3z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="preview-card__content">
+              <div class="preview-card__header">
+                <div>
+                  <h4 class="preview-card__title">Retail Analytics Dashboard</h4>
+                  <span class="preview-card__category">Retail / Analytics</span>
+                </div>
+              </div>
+              <div class="preview-card__tags">
+                <span class="tag tag--accent">D3.js</span>
+                <span class="tag">Charts</span>
+                <span class="tag">Analytics</span>
+              </div>
+              <div class="preview-card__actions">
+                <a href="pages/demo-systems.html" class="btn btn--primary btn--sm btn-ripple">Open Demo</a>
+                <button class="btn btn--ghost btn--sm">Preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-cta reveal">
+          <a href="pages/demo-systems.html" class="btn btn--secondary">
+            View All Demo Systems
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ Component Library Preview ═══ -->
+    <section class="components-section section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Components</div>
+          <h2 class="section-title">Enterprise Component Library</h2>
+          <p class="section-description">Over 50 meticulously crafted, accessible, and responsive UI components ready for any project.</p>
+        </div>
+
+        <div class="components-showcase">
+          <div class="components-showcase__nav reveal">
+            <button class="components-showcase__tab active" data-tab="buttons">Buttons</button>
+            <button class="components-showcase__tab" data-tab="inputs">Inputs</button>
+            <button class="components-showcase__tab" data-tab="cards">Cards</button>
+            <button class="components-showcase__tab" data-tab="tables">Tables</button>
+            <button class="components-showcase__tab" data-tab="charts">Charts</button>
+          </div>
+
+          <div class="components-showcase__preview reveal reveal--stagger-1">
+            <div class="components-showcase__panel active" data-panel="buttons">
+              <div class="component-grid">
+                <div class="component-demo">
+                  <span class="component-demo__label">Primary</span>
+                  <button class="btn btn--primary btn-ripple">Button</button>
+                </div>
+                <div class="component-demo">
+                  <span class="component-demo__label">Secondary</span>
+                  <button class="btn btn--secondary">Button</button>
+                </div>
+                <div class="component-demo">
+                  <span class="component-demo__label">Ghost</span>
+                  <button class="btn btn--ghost">Button</button>
+                </div>
+                <div class="component-demo">
+                  <span class="component-demo__label">Small</span>
+                  <button class="btn btn--primary btn--sm btn-ripple">Button</button>
+                </div>
+                <div class="component-demo">
+                  <span class="component-demo__label">Large</span>
+                  <button class="btn btn--primary btn--lg btn-ripple">Button</button>
+                </div>
+                <div class="component-demo">
+                  <span class="component-demo__label">With Icon</span>
+                  <button class="btn btn--primary btn-ripple">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="components-showcase__panel" data-panel="inputs">
+              <div class="component-grid component-grid--inputs">
+                <div class="component-demo component-demo--full">
+                  <span class="component-demo__label">Text Input</span>
+                  <input type="text" class="form-input" placeholder="Enter your name" value="John Doe">
+                </div>
+                <div class="component-demo component-demo--full">
+                  <span class="component-demo__label">Email Input</span>
+                  <input type="email" class="form-input" placeholder="you@company.com">
+                </div>
+                <div class="component-demo component-demo--full">
+                  <span class="component-demo__label">Search Input</span>
+                  <input type="search" class="form-input" placeholder="Search...">
+                </div>
+              </div>
+            </div>
+
+            <div class="components-showcase__panel" data-panel="cards">
+              <div class="component-grid component-grid--cards">
+                <div class="card" style="padding: 16px;">
+                  <h5 style="font-size: 14px; margin-bottom: 4px;">Standard Card</h5>
+                  <p style="font-size: 12px;">With border and subtle gradient.</p>
+                </div>
+                <div class="card card--interactive" style="padding: 16px;">
+                  <h5 style="font-size: 14px; margin-bottom: 4px;">Interactive Card</h5>
+                  <p style="font-size: 12px;">Hover for elevation effect.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="components-showcase__panel" data-panel="tables">
+              <div class="component-demo component-demo--full">
+                <table class="demo-table">
+                  <thead>
+                    <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Alice Smith</td><td>Admin</td><td><span class="tag tag--success">Active</span></td></tr>
+                    <tr><td>Bob Jones</td><td>Editor</td><td><span class="tag tag--accent">Pending</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="components-showcase__panel" data-panel="charts">
+              <div class="component-grid component-grid--charts">
+                <div class="chart-placeholder">
+                  <div class="chart-placeholder__bars">
+                    <div class="chart-placeholder__bar" style="height: 40%"></div>
+                    <div class="chart-placeholder__bar" style="height: 70%"></div>
+                    <div class="chart-placeholder__bar" style="height: 55%"></div>
+                    <div class="chart-placeholder__bar" style="height: 90%"></div>
+                    <div class="chart-placeholder__bar" style="height: 65%"></div>
+                    <div class="chart-placeholder__bar" style="height: 80%"></div>
+                  </div>
+                  <span class="chart-placeholder__label">Bar Chart</span>
+                </div>
+                <div class="chart-placeholder">
+                  <div class="chart-placeholder__line">
+                    <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                      <polyline points="0,35 20,25 40,30 60,10 80,20 100,5" fill="none" stroke="var(--accent-gold)" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <span class="chart-placeholder__label">Line Chart</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-cta reveal">
+          <a href="pages/components.html" class="btn btn--secondary">
+            Explore All Components
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider divider--accent"></div>
+
+    <!-- ═══ Latest Projects ═══ -->
+    <section class="projects-section section">
+      <div class="container">
+        <div class="section-header section-header--left reveal">
+          <div class="section-label">Projects</div>
+          <h2 class="section-title">Latest Work</h2>
+          <p class="section-description">Recently shipped projects and systems available for review and deployment.</p>
+        </div>
+
+        <div class="projects-list">
+          <a href="pages/demo-systems.html" class="project-item reveal">
+            <div class="project-item__meta">
+              <span class="project-item__date">Q4 2025</span>
+              <span class="tag tag--accent">New</span>
+            </div>
+            <h3 class="project-item__title">Enterprise Resource Planning Suite</h3>
+            <p class="project-item__description">Complete ERP interface with inventory, HR, finance, and analytics modules designed for mid-size manufacturing operations.</p>
+            <div class="project-item__tags">
+              <span class="tag">ERP</span>
+              <span class="tag">Manufacturing</span>
+              <span class="tag">Analytics</span>
+            </div>
+          </a>
+
+          <a href="pages/demo-systems.html" class="project-item reveal reveal--stagger-1">
+            <div class="project-item__meta">
+              <span class="project-item__date">Q3 2025</span>
+              <span class="tag tag--success">Stable</span>
+            </div>
+            <h3 class="project-item__title">Healthcare Patient Portal</h3>
+            <p class="project-item__description">HIPAA-compliant patient management interface with appointment scheduling, records access, and telehealth integration.</p>
+            <div class="project-item__tags">
+              <span class="tag">Healthcare</span>
+              <span class="tag">HIPAA</span>
+              <span class="tag">Portal</span>
+            </div>
+          </a>
+
+          <a href="pages/demo-systems.html" class="project-item reveal reveal--stagger-2">
+            <div class="project-item__meta">
+              <span class="project-item__date">Q3 2025</span>
+              <span class="tag tag--success">Stable</span>
+            </div>
+            <h3 class="project-item__title">Real Estate Property Management</h3>
+            <p class="project-item__description">Property listing and management platform with virtual tours, tenant portals, and automated lease processing workflows.</p>
+            <div class="project-item__tags">
+              <span class="tag">Real Estate</span>
+              <span class="tag">Management</span>
+              <span class="tag">Portal</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              <span class="footer__logo-icon">N</span>
+              <span>NEXORA</span>
+            </a>
+            <p class="footer__description">Premium interactive portfolio platform showcasing enterprise demo systems across multiple industries. Built for teams who demand excellence.</p>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Dribbble">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"/><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"/><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Platform</h4>
+            <nav class="footer__links" aria-label="Footer platform links">
+              <a href="pages/industries.html" class="footer__link">Industries</a>
+              <a href="pages/demo-systems.html" class="footer__link">Demo Systems</a>
+              <a href="pages/components.html" class="footer__link">Components</a>
+              <a href="pages/design-systems.html" class="footer__link">Design Systems</a>
+            </nav>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Resources</h4>
+            <nav class="footer__links" aria-label="Footer resource links">
+              <a href="pages/about.html" class="footer__link">About</a>
+              <a href="pages/contact.html" class="footer__link">Contact</a>
+              <a href="#" class="footer__link">Documentation</a>
+              <a href="#" class="footer__link">Changelog</a>
+            </nav>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Connect</h4>
+            <nav class="footer__links" aria-label="Footer connect links">
+              <a href="#" class="footer__link">GitHub</a>
+              <a href="#" class="footer__link">Twitter</a>
+              <a href="#" class="footer__link">LinkedIn</a>
+              <a href="#" class="footer__link">Newsletter</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright"> NEXORA Portfolio. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="#" class="footer__legal-link">Privacy</a>
+          <a href="#" class="footer__legal-link">Terms</a>
+          <a href="#" class="footer__legal-link">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

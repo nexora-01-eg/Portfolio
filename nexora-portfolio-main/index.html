@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA Portfolio — برتفوليو أعمالنا</title>
+<meta name="description" content="NEXORA Portfolio — مجموعة مختارة من المشاريع البرمجية اللي بنيناها: مواقع، تطبيقات، وألعاب بجودة تنفيذ احترافية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAA0UlEQVR4nO3aQQqAIBRA0d6rDlp01dL9Tx0EtYgRiaLPHHiw8NfZ5yPJPM8LzLIsUwUAAAAAgH+1AtDXdrHqGrv1GfhlsgJv1xYAAAAAAOjQAVrT+Krx+wXOAQAAAAAA6NABWtP4qvH7Bc4BAAAAAADo0AFa0/iq8fsFzgEAAAAAAOjQAVrT+Krx+wXOAQAAAAAA6NABWtP4qvH7Bc4BAAAAAADo0AFa0/iq8fsFzgEAAAAAAOjQAVrT+Krx+wXOAQAAAAAA6NABWtP4qvH7Bc4BAAAAAADo0AFa0/iq8fsFzgEAAAAAAOjQAVrT+Krx+wXOAQAAAAC4lwHrr0XpGmDIfwAAAABJRU5ErkJggg==">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-lang="ar">
+
+<div class="ambient" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <canvas id="net"></canvas>
+</div>
+<div id="prog"><i id="progBar"></i></div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <nav>
+      <a href="#hero" class="brand">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/><circle cx="12" cy="12" r="2.6"/><circle cx="12" cy="12" r="5.5"/></svg></span>
+        <span class="brand-txt"><b>NEXORA</b><small data-ar="برتفوليو الأعمال" data-en="Work Portfolio">برتفوليو الأعمال</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#work" data-ar="الأعمال" data-en="Work">الأعمال</a>
+        <a href="#method" data-ar="منهجنا" data-en="Method">منهجنا</a>
+        <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
+        <span class="nav-indicator" id="navIndicator"></span>
+      </div>
+      <div class="nav-right">
+        <div class="lang-sw" id="langSw">
+          <button type="button" data-lang="ar">AR</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-gold" data-ar="نعمل سوا" data-en="Let's Work Together">نعمل سوا</a>
+        <button type="button" class="burger" id="burger" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mob" id="mobMenu">
+  <a href="#work" data-ar="الأعمال" data-en="Work">الأعمال</a>
+  <a href="#method" data-ar="منهجنا" data-en="Method">منهجنا</a>
+  <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
+  <div class="lang-sw" id="langSwM">
+    <button type="button" data-lang="ar">AR</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+  <a href="#contact" class="btn btn-gold" data-ar="نعمل سوا" data-en="Let's Work Together">نعمل سوا</a>
+</div>
+
+<section id="hero">
+  <div class="hero-ring" aria-hidden="true">
+    <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
+      <circle class="hr1" cx="230" cy="230" r="190"/>
+      <circle class="hr2" cx="230" cy="230" r="150"/>
+      <polygon class="hr3" points="230,66 354,148 354,312 230,394 106,312 106,148"/>
+      <circle class="node n1" cx="230" cy="40" r="4"/>
+      <circle class="node n2" cx="230" cy="420" r="4"/>
+      <circle class="node n3" cx="40" cy="230" r="4"/>
+      <circle class="node n4" cx="420" cy="230" r="4"/>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <div class="h-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+      <span data-ar="NEXORA — بيان أعمال حقيقي" data-en="NEXORA — a real track record">NEXORA — بيان أعمال حقيقي</span>
+    </div>
+    <h1 data-ar="كل مشروع... حكاية نجاح نكتبها بأكواد." data-en="Every project is a success story we write in code.">كل مشروع... حكاية نجاح نكتبها بأكواد.</h1>
+    <p class="sub" data-ar="برتفوليو بيجمع مشاريعنا البرمجية — مواقع، تطبيقات، وألعاب. كل واحد متصنّف بمستوى تنفيذه، وكل واحد حكاية شغل حقيقي." data-en="A portfolio of our software projects — websites, apps and games. Each one is rated by its execution level, and each one is a story of real work.">برتفوليو بيجمع مشاريعنا البرمجية — مواقع، تطبيقات، وألعاب. كل واحد متصنّف بمستوى تنفيذه، وكل واحد حكاية شغل حقيقي.</p>
+    <div class="h-ctas">
+      <a href="#work" class="btn btn-gold">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+        <span data-ar="استكشف الأعمال" data-en="Explore the Work">استكشف الأعمال</span>
+      </a>
+      <a href="#contact" class="btn btn-outline" data-ar="ابدأ مشروعك" data-en="Start Your Project">ابدأ مشروعك</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><b data-count="4">0</b><span data-ar="مشاريع مبنية" data-en="Projects Built">مشاريع مبنية</span></div>
+      <div class="hs"><b data-count="3">0</b><span data-ar="مستويات تنفيذ" data-en="Execution Levels">مستويات تنفيذ</span></div>
+      <div class="hs"><b>2</b><span data-ar="لغات (عربي/إنجليزي)" data-en="Languages (AR/EN)">لغات (عربي/إنجليزي)</span></div>
+      <div class="hs"><b data-en="24/7" data-ar="24/7">24/7</b><span data-ar="دعم مستمر" data-en="Ongoing Support">دعم مستمر</span></div>
+    </div>
+    <div class="scroll-hint"><span data-ar="تابع" data-en="Scroll">تابع</span><div class="scroll-line"></div></div>
+  </div>
+</section>
+
+<section class="section-pad" id="work">
+  <div class="wrap">
+    <div class="kicker reveal" data-ar="الأعمال" data-en="The Work">الأعمال</div>
+    <h2 class="reveal" data-ar="مشاريعنا بالمستوى الحقيقي لتنفيذها" data-en="Our projects, at their real execution level">مشاريعنا بالمستوى الحقيقي لتنفيذها</h2>
+    <p class="section-sub reveal" data-ar="مستوى التنفيذ بيتقاس بالنقاط: ♦ مشروع أساسي، ♦♦ مشروع متكامل، ♦♦♦ مشروع رائد. اعملها تجربة بنفسك." data-en="Execution level is rated in points: ♦ starter, ♦♦ complete, ♦♦♦ flagship. Try them yourself.">مستوى التنفيذ بيتقاس بالنقاط: ♦ مشروع أساسي، ♦♦ مشروع متكامل، ♦♦♦ مشروع رائد. اعملها تجربة بنفسك.</p>
+
+    <div class="legend reveal">
+      <span class="lg"><i>♦</i><span data-ar="أساسي" data-en="Starter">أساسي</span></span>
+      <span class="lg"><i>♦♦</i><span data-ar="متكامل" data-en="Complete">متكامل</span></span>
+      <span class="lg"><i>♦♦♦</i><span data-ar="رائد" data-en="Flagship">رائد</span></span>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- ══════ 1 · Flagship · NEXORA Growth Platform ══════ -->
+      <article class="proj-card reveal" data-tier="3">
+        <div class="proj-media">
+          <img src="assets/shots/nexora-hero.png" alt="NEXORA Growth Platform — منصة النمو الرئيسية" loading="lazy">
+          <span class="tier-badge" aria-hidden="true">♦♦♦</span>
+          <span class="cat-badge" data-ar="موقع الشركة" data-en="Corporate Website">موقع الشركة</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-level">
+            <span class="diamonds">♦♦♦</span>
+            <span class="level-label" data-ar="مشروع رائد — الموقع الرئيسي للوكالة" data-en="Flagship — the agency's main site">مشروع رائد — الموقع الرئيسي للوكالة</span>
+          </div>
+          <h3 data-ar="منصة NEXORA للنمو الرقمي" data-en="NEXORA Growth Platform">منصة NEXORA للنمو الرقمي</h3>
+          <p data-ar="الموقع الرئيسي الكامل للوكالة: نظام نمو متكامل بخمس باقات، تشخيص تفاعلي من 6 أسئلة، مبدّل لغات عربي/إنجليزي، هوية ذهبية داكنة، ورسومات تفاعلية متحركة." data-en="The agency's complete flagship website: an integrated growth system with 5 packages, a 6-question interactive assessment, AR/EN language switcher, a dark-gold identity, and animated interactive visuals.">الموقع الرئيسي الكامل للوكالة: نظام نمو متكامل بخمس باقات، تشخيص تفاعلي من 6 أسئلة، مبدّل لغات عربي/إنجليزي، هوية ذهبية داكنة، ورسومات تفاعلية متحركة.</p>
+          <ul class="features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="مبدّل لغات AR/EN كامل" data-en="Full AR/EN language switcher">مبدّل لغات AR/EN كامل</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="تشخيص تفاعلي + باقات نمو" data-en="Interactive assessment + growth packages">تشخيص تفاعلي + باقات نمو</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="رسومات Canvas تفاعلية" data-en="Interactive canvas visuals">رسومات Canvas تفاعلية</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="نموذج تواصل ذكي بواتساب وإيميل" data-en="Smart contact form to WhatsApp & email">نموذج تواصل ذكي بواتساب وإيميل</span></li>
+          </ul>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Canvas</span><span>RTL</span></div>
+          <a href="../Nexora-Website-v2/index.html" target="_blank" rel="noopener" class="btn btn-gold btn-block">
+            <span data-ar="اعملها تجربة مباشرة" data-en="View Live Project">اعملها تجربة مباشرة</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ══════ 2 · Complete · Weather App ══════ -->
+      <article class="proj-card reveal" data-tier="2">
+        <div class="proj-media">
+          <img src="assets/shots/weather.png" alt="تطبيق الطقس الحي — Live Weather App" loading="lazy">
+          <span class="tier-badge" aria-hidden="true">♦♦</span>
+          <span class="cat-badge" data-ar="تطبيق ويب + API" data-en="Web App + API">تطبيق ويب + API</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-level">
+            <span class="diamonds">♦♦</span>
+            <span class="level-label" data-ar="مشروع متكامل — بيانات حية من الإنترنت" data-en="Complete — live data from the internet">مشروع متكامل — بيانات حية من الإنترنت</span>
+          </div>
+          <h3 data-ar="تطبيق الطقس الحي" data-en="Live Weather App">تطبيق الطقس الحي</h3>
+          <p data-ar="تطبيق طقس بالعربي بالكامل بيجيب بيانات حية من Open-Meteo: اكتب أي مدينة في العالم وشوف درجة الحرارة، الرياح، الرطوبة، الضغط، الشروق والغروب، وتوقعات 5 أيام كاملة." data-en="A fully Arabic weather app pulling live data from Open-Meteo: type any city in the world and see temperature, wind, humidity, pressure, sunrise/sunset, and a full 5-day forecast.">تطبيق طقس بالعربي بالكامل بيجيب بيانات حية من Open-Meteo: اكتب أي مدينة في العالم وشوف درجة الحرارة، الرياح، الرطوبة، الضغط، الشروق والغروب، وتوقعات 5 أيام كاملة.</p>
+          <ul class="features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="بحث حي بأي مدينة" data-en="Live search for any city">بحث حي بأي مدينة</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="جلب بيانات فوري بـ Fetch API" data-en="Real-time data via Fetch API">جلب بيانات فوري بـ Fetch API</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="توقعات 5 أيام بالتفاصيل" data-en="Full 5-day forecast">توقعات 5 أيام بالتفاصيل</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="معالجة أخطاء ورسائل واضحة" data-en="Clear error handling & messages">معالجة أخطاء ورسائل واضحة</span></li>
+          </ul>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Fetch API</span><span>Async/Await</span></div>
+          <a href="../level3/weather.html" target="_blank" rel="noopener" class="btn btn-outline btn-block">
+            <span data-ar="اعملها تجربة مباشرة" data-en="View Live Project">اعملها تجربة مباشرة</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ══════ 3 · Complete · XO Game ══════ -->
+      <article class="proj-card reveal" data-tier="2">
+        <div class="proj-media">
+          <img src="assets/shots/xo.png" alt="لعبة إكس-أو — XO Game" loading="lazy">
+          <span class="tier-badge" aria-hidden="true">♦♦</span>
+          <span class="cat-badge" data-ar="لعبة" data-en="Game">لعبة</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-level">
+            <span class="diamonds">♦♦</span>
+            <span class="level-label" data-ar="مشروع متكامل — لعبة بمنطق وحفظ نتائج" data-en="Complete — game logic with saved scores">مشروع متكامل — لعبة بمنطق وحفظ نتائج</span>
+          </div>
+          <h3 data-ar="لعبة إكس-أو" data-en="XO Game">لعبة إكس-أو</h3>
+          <p data-ar="لعبة إكس-أو كاملة بتصميم داكن عصري: منطق فوز ذكي بيلمّ أي ثلاث خطوط، حفظ النتائج تلقائيًا في المتصفح، ولوحة نتائج كاملة للاعبين والتعادلات." data-en="A complete XO game with a modern dark design: smart win detection across all lines, automatic score saving in the browser, and a full scoreboard for both players and draws.">لعبة إكس-أو كاملة بتصميم داكن عصري: منطق فوز ذكي بيلمّ أي ثلاث خطوط، حفظ النتائج تلقائيًا في المتصفح، ولوحة نتائج كاملة للاعبين والتعادلات.</p>
+          <ul class="features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="منطق فوز ذكي (8 خطوط فوز)" data-en="Smart win logic (8 win lines)">منطق فوز ذكي (8 خطوط فوز)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="حفظ النتائج تلقائيًا بـ LocalStorage" data-en="Auto score saving via LocalStorage">حفظ النتائج تلقائيًا بـ LocalStorage</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="لوحة نتائج + كشف خط الفوز" data-en="Scoreboard + winning-line highlight">لوحة نتائج + كشف خط الفوز</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="تصميم داكن عصري متجاوب" data-en="Modern responsive dark design">تصميم داكن عصري متجاوب</span></li>
+          </ul>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>LocalStorage</span></div>
+          <a href="../level2/xo.html" target="_blank" rel="noopener" class="btn btn-outline btn-block">
+            <span data-ar="اعملها تجربة مباشرة" data-en="View Live Project">اعملها تجربة مباشرة</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ══════ 4 · Starter · First Web App ══════ -->
+      <article class="proj-card reveal" data-tier="1">
+        <div class="proj-media">
+          <img src="assets/shots/demo.png" alt="أول تطبيق ويب — First Web App" loading="lazy">
+          <span class="tier-badge" aria-hidden="true">♦</span>
+          <span class="cat-badge" data-ar="تطبيق ويب تعليمي" data-en="Learning Web App">تطبيق ويب تعليمي</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-level">
+            <span class="diamonds">♦</span>
+            <span class="level-label" data-ar="مشروع أساسي — أول خطوة برمجية" data-en="Starter — the first coding step">مشروع أساسي — أول خطوة برمجية</span>
+          </div>
+          <h3 data-ar="أول تطبيق ويب" data-en="First Web App">أول تطبيق ويب</h3>
+          <p data-ar="أول تطبيق ويب تعليمي بيجمع 4 أدوات عملية في صفحة واحدة: عدّاد تفاعلي، آلة حاسبة، قائمة مهام، وساعة حية — مع وضع ليلي/نهاري كامل." data-en="A first learning web app combining 4 practical tools on one page: an interactive counter, a calculator, a to-do list, and a live clock — with a full dark/light mode.">أول تطبيق ويب تعليمي بيجمع 4 أدوات عملية في صفحة واحدة: عدّاد تفاعلي، آلة حاسبة، قائمة مهام، وساعة حية — مع وضع ليلي/نهاري كامل.</p>
+          <ul class="features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="عدّاد تفاعلي" data-en="Interactive counter">عدّاد تفاعلي</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="آلة حاسبة كاملة" data-en="Full calculator">آلة حاسبة كاملة</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="قائمة مهام + ساعة حية" data-en="To-do list + live clock">قائمة مهام + ساعة حية</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="وضع ليلي/نهاري" data-en="Dark/light mode">وضع ليلي/نهاري</span></li>
+          </ul>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>DOM Events</span></div>
+          <a href="../index.html" target="_blank" rel="noopener" class="btn btn-outline btn-block">
+            <span data-ar="اعملها تجربة مباشرة" data-en="View Live Project">اعملها تجربة مباشرة</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="work-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+      <span data-ar="مشروعك الجاي ممكن يكون الرائد الجاي في البرتفوليو ده." data-en="Your next project could be the next flagship in this portfolio.">مشروعك الجاي ممكن يكون الرائد الجاي في البرتفوليو ده.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad bg-alt" id="method">
+  <div class="wrap grid-2">
+    <div class="reveal-l">
+      <div class="kicker" data-ar="منهجنا" data-en="Our Method">منهجنا</div>
+      <h2 data-ar="النتيجة مش صدفة... وراها نظام" data-en="The result is no accident... there's a system behind it">النتيجة مش صدفة... وراها نظام</h2>
+      <p class="section-sub" data-ar="ورا كل مشروع في البرتفوليو ده نظام شغل ثابت: نفهم، نخطط، ننفذ، نقيس. مفيش شغل عشوائي — كل خطوة بتتقاس بأرقام حقيقية." data-en="Behind every project in this portfolio is a fixed working system: understand, plan, execute, measure. No random work — every step is measured with real numbers.">ورا كل مشروع في البرتفوليو ده نظام شغل ثابت: نفهم، نخطط، ننفذ، نقيس. مفيش شغل عشوائي — كل خطوة بتتقاس بأرقام حقيقية.</p>
+      <div class="vals">
+        <div class="val"><div class="icon-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div><h5 data-ar="تنفيذ احترافي" data-en="Professional Execution">تنفيذ احترافي</h5><p data-ar="كود نظيف وقابل للتطوير، مش قوالب جاهزة." data-en="Clean, scalable code — not ready-made templates.">كود نظيف وقابل للتطوير، مش قوالب جاهزة.</p></div>
+        <div class="val"><div class="icon-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18M7 15l4-6 4 3 5-8"/></svg></div><h5 data-ar="نتائج بتتقاس" data-en="Measured Results">نتائج بتتقاس</h5><p data-ar="كل حاجة بتتقاس بأرقام حقيقية." data-en="Everything is measured with real numbers.">كل حاجة بتتقاس بأرقام حقيقية.</p></div>
+        <div class="val"><div class="icon-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7l-1 8 11-13h-7l1-7z"/></svg></div><h5 data-ar="سرعة وتواصل" data-en="Speed & Communication">سرعة وتواصل</h5><p data-ar="تنفيذ سريع وتحديث مستمر." data-en="Fast execution with constant updates.">تنفيذ سريع وتحديث مستمر.</p></div>
+        <div class="val"><div class="icon-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h5 data-ar="شراكة حقيقية" data-en="True Partnership">شراكة حقيقية</h5><p data-ar="امتداد لفريقك مش مجرد مورد خدمة." data-en="An extension of your team, not just a vendor.">امتداد لفريقك مش مجرد مورد خدمة.</p></div>
+      </div>
+    </div>
+    <div class="orbit reveal">
+      <svg viewBox="0 0 400 400" class="orbit-svg">
+        <circle class="o-ring" cx="200" cy="200" r="150"/>
+        <circle class="o-ring" cx="200" cy="200" r="105"/>
+        <polygon class="o-hex" points="200,60 321,130 321,270 200,340 79,270 79,130"/>
+        <circle class="o-node" cx="200" cy="200" r="26"/>
+        <circle class="o-dot" cx="200" cy="50" r="5"/>
+        <circle class="o-dot" cx="200" cy="350" r="5"/>
+        <circle class="o-dot" cx="50" cy="200" r="5"/>
+        <circle class="o-dot" cx="350" cy="200" r="5"/>
+        <text class="o-label" x="200" y="200" text-anchor="middle" dominant-baseline="middle">NEXORA</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <span class="fc-spark s1"></span><span class="fc-spark s2"></span><span class="fc-spark s3"></span><span class="fc-spark s4"></span>
+  <div class="wrap" id="contact">
+    <div class="kicker kicker-center" data-ar="جاهز نبدأ؟" data-en="Ready to Start?">جاهز نبدأ؟</div>
+    <h2 data-ar="برتفوليو اليوم... نجاح الغد بيبدأ هنا." data-en="Today's portfolio... tomorrow's success starts here.">برتفوليو اليوم... نجاح الغد بيبدأ هنا.</h2>
+    <p data-ar="عايز مشروعك يكون الرائد الجاي في البرتفوليو؟ كلمنا والاستشارة مجانية." data-en="Want your project to be the next flagship in the portfolio? Talk to us — the consultation is free.">عايز مشروعك يكون الرائد الجاي في البرتفوليو؟ كلمنا والاستشارة مجانية.</p>
+    <div class="contact-links">
+      <a href="https://wa.me/201062264302?text=%F0%9F%91%8B%20Hello%20NEXORA%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20start%20a%20project." target="_blank" rel="noopener" class="btn btn-gold">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        <span data-ar="واتساب — 201062264302" data-en="WhatsApp — 201062264302">واتساب — 201062264302</span>
+      </a>
+      <a href="mailto:Nexora01.eg@outlook.com" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+        <span data-ar="الإيميل — Nexora01.eg@outlook.com" data-en="Email — Nexora01.eg@outlook.com">الإيميل — Nexora01.eg@outlook.com</span>
+      </a>
+    </div>
+    <div class="sep" data-ar="بدون التزام — رد خلال 24 ساعة" data-en="No commitment — response within 24 hours">بدون التزام — رد خلال 24 ساعة</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/><circle cx="12" cy="12" r="2.6"/><circle cx="12" cy="12" r="5.5"/></svg></span>
+          <span class="brand-txt"><b>NEXORA</b><small data-ar="برتفوليو الأعمال" data-en="Work Portfolio">برتفوليو الأعمال</small></span>
+        </div>
+        <p class="foot-brand-txt" data-ar="بيان حقيقي بشغل حقيقي — كل مشروع بنبنيه بحساب وخطة، وكل نتيجة بتتقاس." data-en="A real track record of real work — every project we build is planned and measured.">بيان حقيقي بشغل حقيقي — كل مشروع بنبنيه بحساب وخطة، وكل نتيجة بتتقاس.</p>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</span></div>
+        <ul>
+          <li><a href="#hero"><span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a></li>
+          <li><a href="#work"><span data-ar="الأعمال" data-en="Work">الأعمال</span></a></li>
+          <li><a href="#method"><span data-ar="منهجنا" data-en="Method">منهجنا</span></a></li>
+          <li><a href="#contact"><span data-ar="تواصل" data-en="Contact">تواصل</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <div class="foot-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-13h-7l1-7z"/></svg><span data-ar="حساباتنا" data-en="Follow Us">حساباتنا</span></div>
+        <div class="socials">
+          <a href="https://wa.me/201062264302" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></a>
+          <a href="https://t.me/Nexora_01_eg" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+          <a href="https://www.facebook.com/nexora01.EG" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/nexora_01.eg" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.linkedin.com/in/nexoraone01eg" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 018 0v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-ar="© 2026 NEXORA. جميع الحقوق محفوظة." data-en="© 2026 NEXORA. All rights reserved.">© 2026 NEXORA. جميع الحقوق محفوظة.</span>
+      <span class="foot-tag">NEXORA — <span data-ar="بيانات الأعمال" data-en="Work Portfolio">بيانات الأعمال</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

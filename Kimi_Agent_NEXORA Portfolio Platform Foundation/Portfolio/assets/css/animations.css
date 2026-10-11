@@ -1,0 +1,376 @@
+/* ═══════════════════════════════════════════════════════════
+   NEXORA Portfolio — Animations & Effects
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('variables.css');
+
+/* ═══ Keyframes ═══ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    border-color: rgba(212, 175, 55, 0.4);
+  }
+}
+
+/* ═══ Scroll Reveal Classes ═══ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal--left {
+  transform: translateX(-40px);
+}
+
+.reveal--right {
+  transform: translateX(40px);
+}
+
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+.reveal--stagger-1 { transition-delay: 0.05s; }
+.reveal--stagger-2 { transition-delay: 0.10s; }
+.reveal--stagger-3 { transition-delay: 0.15s; }
+.reveal--stagger-4 { transition-delay: 0.20s; }
+.reveal--stagger-5 { transition-delay: 0.25s; }
+.reveal--stagger-6 { transition-delay: 0.30s; }
+
+/* ═══ Page Transition ═══ */
+
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ═══ Card Effects ═══ */
+
+.card-hover {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--border-accent);
+}
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* ═══ Button Ripple ═══ */
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ═══ Shimmer Loading Effect ═══ */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    rgba(255, 255, 255, 0.04) 50%,
+    var(--bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ═══ Floating Gradient Background ═══ */
+
+.floating-gradient {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ═══ Hero Gradient Background ═══ */
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: var(--gradient-hero);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══ Glass Card ═══ */
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+}
+
+/* ═══ Accent Border Animation ═══ */
+
+.accent-border {
+  border: 1px solid var(--border-default);
+  transition: border-color var(--transition-base);
+}
+
+.accent-border:hover {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* ═══ Smooth Image Hover ═══ */
+
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-hover-zoom img {
+  transition: transform var(--transition-slow);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* ═══ Underline Animation ═══ */
+
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-gold);
+  transition: width var(--transition-base);
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* ═══ Status Indicator ═══ */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-gold);
+  opacity: 0.4;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ═══ Counter Animation ═══ */
+
+.counter {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}

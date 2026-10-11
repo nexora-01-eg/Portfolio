@@ -1,0 +1,205 @@
+/* ═══════════════════════════════════════════════════════════
+   NEXORA Portfolio — Contact Page
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('variables.css');
+
+/* ═══ Contact Layout ═══ */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}
+
+/* ═══ Contact Info ═══ */
+.contact-info__title {
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
+}
+
+.contact-info__description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-10);
+}
+
+/* ═══ Contact Methods ═══ */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-10);
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.contact-method__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.contact-method__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: var(--space-1);
+}
+
+.contact-method__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-tertiary);
+}
+
+.contact-method__value {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.contact-method__value:hover {
+  color: var(--accent-gold);
+}
+
+/* ═══ Contact Social ═══ */
+.contact-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.contact-social__label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.contact-social__links {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.contact-social__link {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.contact-social__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* ═══ Contact Form ═══ */
+.contact-form-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact-form .form-group {
+  margin-bottom: var(--space-3);
+}
+
+.contact-form .form-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.contact-form .form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.contact-form .form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.contact-form .form-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  outline: none;
+}
+
+.contact-form .form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form .form-error {
+  font-size: var(--text-xs);
+  color: #ef4444;
+  margin-top: var(--space-1);
+  display: none;
+}
+
+.contact-form .form-group.has-error .form-input {
+  border-color: #ef4444;
+}
+
+.contact-form .form-group.has-error .form-error {
+  display: block;
+}
+
+/* ═══ Responsive ═══ */
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: var(--space-5);
+  }
+
+  .contact-method__icon {
+    width: 40px;
+    height: 40px;
+  }
+}

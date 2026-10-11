@@ -1,0 +1,280 @@
+/* ═══════════════════════════════════════════════════════════
+   NEXORA Portfolio — Navigation Bar
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('variables.css');
+
+/* ─── Navbar ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: var(--z-navbar);
+  background: transparent;
+  transition: background var(--transition-base), backdrop-filter var(--transition-base), box-shadow var(--transition-base);
+}
+
+.navbar--scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ─── Logo ─── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-primary);
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  opacity: 0.8;
+}
+
+.navbar__logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--bg-primary);
+  flex-shrink: 0;
+}
+
+.navbar__logo-text {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.navbar__logo-name {
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+}
+
+.navbar__logo-suffix {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--accent-gold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+/* ─── Nav Links ─── */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.navbar__link {
+  position: relative;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navbar__link:hover::after {
+  width: 20px;
+}
+
+.navbar__link.active {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.navbar__link.active::after {
+  width: 20px;
+}
+
+/* ─── Search Button ─── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.navbar__search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.navbar__search:hover {
+  border-color: var(--border-hover);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+}
+
+.navbar__search-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.navbar__search-shortcut {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ─── Mobile Menu Toggle ─── */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+  z-index: 10;
+}
+
+.navbar__toggle-line {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
+}
+
+.navbar__toggle.active .navbar__toggle-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.navbar__toggle.active .navbar__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.active .navbar__toggle-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ─── Mobile Menu ─── */
+.navbar__mobile {
+  display: none;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  padding: var(--space-6);
+  z-index: var(--z-navbar);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+  overflow-y: auto;
+}
+
+.navbar__mobile.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.navbar__mobile-link {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  border-radius: var(--radius-lg);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link.active {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__search-text {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__logo-suffix {
+    display: none;
+  }
+
+  .navbar__search-shortcut {
+    display: none;
+  }
+}

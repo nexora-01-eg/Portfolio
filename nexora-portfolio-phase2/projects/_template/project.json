@@ -1,0 +1,25 @@
+{
+  "id": "",
+  "slug": "",
+  "title": "",
+  "tagline": "",
+  "description": "",
+  "version": "1.0.0",
+  "status": "draft",
+  "industry": "",
+  "service": "",
+  "tags": [],
+  "technologies": [],
+  "componentsUsed": [],
+  "relatedProjects": [],
+  "media": {
+    "thumbnail": "thumbnail/thumbnail.jpg",
+    "cover": "cover/cover.jpg",
+    "preview": "preview/preview.mp4",
+    "gallery": []
+  },
+  "readme": "README.md",
+  "createdAt": "",
+  "updatedAt": "",
+  "futureUpdates": []
+}

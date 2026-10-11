@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXORA — Enterprise Demo Library</title>
+  <meta name="description" content="NEXORA Portfolio Platform — the foundation of an enterprise demo library." />
+
+  <!-- Core design tokens and foundation styles, in dependency order -->
+  <link rel="stylesheet" href="core/css/tokens.css" />
+  <link rel="stylesheet" href="core/css/base.css" />
+  <link rel="stylesheet" href="core/css/typography.css" />
+  <link rel="stylesheet" href="core/css/layout.css" />
+  <link rel="stylesheet" href="core/css/utilities.css" />
+  <link rel="stylesheet" href="core/css/animations.css" />
+</head>
+<body>
+  <a class="nx-skip-link" href="#nx-main">Skip to content</a>
+
+  <main id="nx-main" class="nx-container nx-section" role="main">
+    <h1 class="nx-h1">NEXORA</h1>
+    <p class="nx-body-lg nx-text-secondary">
+      Platform foundation initialized — Phase 1 complete. Phase 2 component library shipped.
+    </p>
+    <p style="margin-top: var(--nx-space-5);">
+      <a class="nx-text-accent" href="pages/component-explorer/index.html">Browse the Component Explorer →</a>
+    </p>
+  </main>
+
+  <!-- Core JS foundation. core.js loads first — it defines the
+       window.NEXORA namespace and register() that every other
+       module below calls into. core.js also listens for
+       DOMContentLoaded and runs init() on all registered modules
+       once every script here has executed. -->
+  <script src="core/js/core.js"></script>
+  <script src="core/js/storage.js"></script>
+  <script src="core/js/helpers.js"></script>
+  <script src="core/js/theme.js"></script>
+  <script src="core/js/router.js"></script>
+  <script src="core/js/manifest.js"></script>
+  <script src="core/js/search.js"></script>
+  <script src="core/js/filters.js"></script>
+  <script src="core/js/animations.js"></script>
+</body>
+</html>

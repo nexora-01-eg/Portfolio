@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "updatedAt": null,
+  "count": 0,
+  "categories": [
+    { "id": "ui", "label": "UI Primitives", "path": "/components/ui/" },
+    { "id": "cards", "label": "Cards", "path": "/components/cards/" },
+    { "id": "navigation", "label": "Navigation", "path": "/components/navigation/" },
+    { "id": "modals", "label": "Modals", "path": "/components/modals/" },
+    { "id": "forms", "label": "Forms", "path": "/components/forms/" },
+    { "id": "media", "label": "Media / Gallery", "path": "/components/media/" },
+    { "id": "feedback", "label": "Feedback (toasts, banners, states)", "path": "/components/feedback/" }
+  ],
+  "components": []
+}

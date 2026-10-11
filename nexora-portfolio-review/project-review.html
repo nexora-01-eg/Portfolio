@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXORA — Project Review (all screens, one file)</title>
+
+<link rel="stylesheet" href="core/css/tokens.css" />
+<link rel="stylesheet" href="core/css/base.css" />
+<link rel="stylesheet" href="core/css/typography.css" />
+<link rel="stylesheet" href="core/css/layout.css" />
+<link rel="stylesheet" href="core/css/utilities.css" />
+<link rel="stylesheet" href="core/css/animations.css" />
+<link rel="stylesheet" href="core/css/shell.css" />
+
+<link rel="stylesheet" href="components/navigation/navbar/navbar.css" />
+<link rel="stylesheet" href="components/navigation/footer/footer.css" />
+<link rel="stylesheet" href="components/navigation/hero-block/hero-block.css" />
+<link rel="stylesheet" href="components/navigation/section-header/section-header.css" />
+<link rel="stylesheet" href="components/navigation/breadcrumbs/breadcrumbs.css" />
+<link rel="stylesheet" href="components/navigation/pagination/pagination.css" />
+<link rel="stylesheet" href="components/navigation/sidebar/sidebar.css" />
+<link rel="stylesheet" href="components/ui/button/button.css" />
+<link rel="stylesheet" href="components/ui/badge/badge.css" />
+<link rel="stylesheet" href="components/ui/tag/tag.css" />
+<link rel="stylesheet" href="components/ui/tabs/tabs.css" />
+<link rel="stylesheet" href="components/ui/timeline/timeline.css" />
+<link rel="stylesheet" href="components/ui/command-palette/command-palette.css" />
+<link rel="stylesheet" href="components/forms/search-box/search-box.css" />
+<link rel="stylesheet" href="components/forms/checkbox/checkbox.css" />
+<link rel="stylesheet" href="components/forms/select/select.css" />
+<link rel="stylesheet" href="components/modals/modal/modal.css" />
+<link rel="stylesheet" href="components/feedback/empty-state/empty-state.css" />
+<link rel="stylesheet" href="components/cards/card/card.css" />
+<link rel="stylesheet" href="components/cards/stats-card/stats-card.css" />
+<link rel="stylesheet" href="components/cards/project-card/project-card.css" />
+<link rel="stylesheet" href="components/cards/industry-card/industry-card.css" />
+<link rel="stylesheet" href="components/cards/design-system-card/design-system-card.css" />
+<link rel="stylesheet" href="components/cards/component-card/component-card.css" />
+<link rel="stylesheet" href="components/media/gallery-grid/gallery-grid.css" />
+
+<style>
+  /* Review-document-only styling — not part of the live site. */
+  .rv-toc {
+    position: sticky; top: 0; z-index: 500;
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--nx-border-subtle);
+    padding: var(--nx-space-3) var(--nx-space-5);
+    display: flex; gap: var(--nx-space-4); flex-wrap: wrap; align-items: center;
+  }
+  .rv-toc a { font-size: var(--nx-fs-100); color: var(--nx-text-secondary); white-space: nowrap; }
+  .rv-toc a:hover { color: var(--nx-accent-primary); }
+  .rv-toc__label { font-weight: var(--nx-fw-semibold); color: var(--nx-accent-primary); margin-right: var(--nx-space-2); }
+
+  .rv-screen {
+    border-top: 4px solid var(--nx-accent-primary);
+    padding-bottom: var(--nx-space-9);
+  }
+  .rv-screen__label {
+    display: flex; align-items: center; gap: var(--nx-space-3);
+    padding: var(--nx-space-5) var(--nx-space-6);
+    background: var(--nx-bg-elevated);
+  }
+  .rv-screen__label .nx-badge { flex-shrink: 0; }
+  .rv-screen__frame {
+    border: 1px solid var(--nx-border-subtle);
+    margin: var(--nx-space-6);
+    border-radius: var(--nx-radius-lg);
+    overflow: hidden;
+    background: var(--nx-bg-primary);
+  }
+  .rv-note {
+    padding: var(--nx-space-3) var(--nx-space-6);
+    font-size: var(--nx-fs-100);
+    color: var(--nx-text-muted);
+    font-style: italic;
+  }
+  .rv-mini-nav {
+    display: flex; gap: var(--nx-space-5); padding: var(--nx-space-4) var(--nx-space-6);
+    border-bottom: 1px solid var(--nx-border-subtle); font-size: var(--nx-fs-200);
+  }
+  .rv-mini-nav span { color: var(--nx-text-secondary); }
+  .rv-mini-nav span.active { color: var(--nx-accent-primary); font-weight: var(--nx-fw-medium); }
+</style>
+</head>
+<body>
+
+<div class="rv-toc">
+  <span class="rv-toc__label">NEXORA — Full Project Review</span>
+  <a href="#s-home">Home</a>
+  <a href="#s-projects">Projects Catalog</a>
+  <a href="#s-detail">Project Details</a>
+  <a href="#s-industries">Industries</a>
+  <a href="#s-design-systems">Design Systems</a>
+  <a href="#s-collections">Collections</a>
+  <a href="#s-components">Component Explorer</a>
+  <a href="#s-tokens">Design Tokens</a>
+</div>
+
+<div class="nx-container" style="padding-block: var(--nx-space-6);">
+  <p class="nx-caption nx-text-accent">Internal review document — not a live page</p>
+  <h1 class="nx-h2">Every screen, in one file</h1>
+  <p class="nx-body-lg nx-text-secondary" style="max-width: 640px;">
+    This is a static walkthrough of every real screen in the platform, reusing the
+    actual design tokens and component CSS — not a functioning copy of the site
+    (no data fetching, no JS). Scroll through everything below, or jump using the
+    bar above, and note whatever you want changed. Nothing here is wired to real
+    data or navigation — it's for review only.
+  </p>
+</div>
+
+<!-- ============================================================ -->
+<!-- HOME -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-home">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Home — index.html</h2></div>
+  <div class="rv-screen__frame">
+    <header class="nx-navbar nx-navbar--glass">
+      <div class="nx-navbar__inner nx-container">
+        <a class="nx-navbar__brand" href="#">NEXORA</a>
+        <nav class="nx-navbar__links" aria-label="Primary">
+          <a class="nx-navbar__link nx-navbar__link--active" href="#" aria-current="page">Home</a>
+          <a class="nx-navbar__link" href="#">Projects</a>
+          <a class="nx-navbar__link" href="#">Industries</a>
+          <a class="nx-navbar__link" href="#">Design Systems</a>
+          <a class="nx-navbar__link" href="#">Components</a>
+          <a class="nx-navbar__link" href="#">Collections</a>
+        </nav>
+        <div class="nx-navbar__actions">
+          <button class="nx-btn nx-btn--secondary nx-btn--sm" type="button">Search <kbd class="nx-search-box__shortcut">⌘K</kbd></button>
+        </div>
+      </div>
+    </header>
+
+    <section class="nx-hero">
+      <div class="nx-container nx-hero__inner">
+        <p class="nx-caption nx-text-accent">Enterprise Demo Library</p>
+        <h1 class="nx-display">Explore hundreds of<br />professional UI systems.</h1>
+        <p class="nx-body-lg nx-text-secondary nx-hero__lead">500+ demo projects. 20+ industries. One platform built by NEXORA.</p>
+        <div class="nx-row nx-gap-3">
+          <span class="nx-btn nx-btn--primary nx-btn--lg">Explore Projects</span>
+          <span class="nx-btn nx-btn--secondary nx-btn--lg">Browse Industries</span>
+          <span class="nx-btn nx-btn--ghost nx-btn--lg">Open Components</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-band">
+      <div class="nx-container nx-grid nx-grid--4">
+        <div class="nx-card nx-stats-card" style="justify-content:center;text-align:center;"><div class="nx-stats-card__stat"><p class="nx-stats-card__number">500+</p><p class="nx-caption">Demo Projects</p></div></div>
+        <div class="nx-card nx-stats-card" style="justify-content:center;text-align:center;"><div class="nx-stats-card__stat"><p class="nx-stats-card__number">20+</p><p class="nx-caption">Industries</p></div></div>
+        <div class="nx-card nx-stats-card" style="justify-content:center;text-align:center;"><div class="nx-stats-card__stat"><p class="nx-stats-card__number">100+</p><p class="nx-caption">Design Systems</p></div></div>
+        <div class="nx-card nx-stats-card" style="justify-content:center;text-align:center;"><div class="nx-stats-card__stat"><p class="nx-stats-card__number">1000+</p><p class="nx-caption">Components</p></div></div>
+      </div>
+    </section>
+
+    <section class="nx-band">
+      <div class="nx-container">
+        <div class="nx-section-header">
+          <div><p class="nx-caption nx-text-accent">Handpicked</p><h2 class="nx-h2">Featured Projects</h2></div>
+          <span class="nx-btn nx-btn--secondary nx-btn--md">View all</span>
+        </div>
+        <div class="nx-grid nx-grid--3">
+          <a class="nx-card nx-card--flush nx-card--interactive nx-project-card" href="#">
+            <div class="nx-project-card__media"><span class="nx-badge nx-badge--success nx-project-card__status">live</span></div>
+            <div class="nx-project-card__body"><p class="nx-caption">Finance · CRM Systems</p><h3 class="nx-h4">Aurora CRM</h3><p class="nx-small nx-clamp-2">Customer relationship platform for boutique investment firms.</p>
+              <div class="nx-tag-group" style="margin-top:var(--nx-space-3);"><span class="nx-tag">React</span><span class="nx-tag">Supabase</span></div></div>
+          </a>
+          <a class="nx-card nx-card--flush nx-card--interactive nx-project-card" href="#">
+            <div class="nx-project-card__media"><span class="nx-badge nx-badge--live nx-project-card__status">live</span></div>
+            <div class="nx-project-card__body"><p class="nx-caption">Medical · Internal Systems</p><h3 class="nx-h4">Pulseline EHR</h3><p class="nx-small nx-clamp-2">Electronic health records for outpatient clinics.</p>
+              <div class="nx-tag-group" style="margin-top:var(--nx-space-3);"><span class="nx-tag">React</span><span class="nx-tag">Node.js</span></div></div>
+          </a>
+          <a class="nx-card nx-card--flush nx-card--interactive nx-project-card" href="#">
+            <div class="nx-project-card__media"><span class="nx-badge nx-badge--success nx-project-card__status">live</span></div>
+            <div class="nx-project-card__body"><p class="nx-caption">Technology · Dashboard Development</p><h3 class="nx-h4">Nova Dashboard</h3><p class="nx-small nx-clamp-2">Analytics dashboard template for SaaS products.</p>
+              <div class="nx-tag-group" style="margin-top:var(--nx-space-3);"><span class="nx-tag">React</span><span class="nx-tag">Recharts</span></div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="nx-band">
+      <div class="nx-container">
+        <div class="nx-section-header"><div><p class="nx-caption nx-text-accent">By Vertical</p><h2 class="nx-h2">Industries</h2></div></div>
+        <div class="nx-grid nx-grid--auto">
+          <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">Finance</h3><p class="nx-small nx-text-secondary">1 project</p></a>
+          <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">Medical</h3><p class="nx-small nx-text-secondary">1 project</p></a>
+          <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">Corporate</h3><p class="nx-small nx-text-secondary">2 projects</p></a>
+          <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">AI</h3><p class="nx-small nx-text-secondary">1 project</p></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="nx-footer">
+      <div class="nx-container nx-footer__inner">
+        <div class="nx-footer__brand"><p class="nx-h4">NEXORA</p><p class="nx-small">Enterprise Demo Library — built to scale.</p></div>
+        <nav class="nx-footer__col"><p class="nx-caption">Library</p><a href="#">Projects</a><a href="#">Industries</a></nav>
+      </div>
+      <div class="nx-container nx-footer__bottom"><p class="nx-small">© 2026 NEXORA. All rights reserved.</p></div>
+    </footer>
+  </div>
+  <p class="rv-note">↑ Hero, statistics, featured projects, industries grid, footer. (Latest/Popular/Design Systems/Component Library/Updates/Collections sections follow the same pattern, omitted here for length.)</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROJECTS CATALOG -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-projects">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Projects Catalog — pages/projects/index.html</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-top:var(--nx-space-6);">
+      <nav class="nx-breadcrumbs"><ol class="nx-breadcrumbs__list"><li><a class="nx-breadcrumbs__link" href="#">Home</a></li><li><span class="nx-breadcrumbs__sep">/</span><span class="nx-breadcrumbs__current">Projects</span></li></ol></nav>
+      <div class="nx-section-header" style="margin-top:var(--nx-space-5);">
+        <div><p class="nx-caption nx-text-accent">Enterprise Library</p><h1 class="nx-h2">All Projects</h1><p class="nx-body-lg nx-text-secondary">12 projects found</p></div>
+        <span class="nx-btn nx-btn--secondary nx-btn--md">Filters</span>
+      </div>
+      <div style="display:flex; gap: var(--nx-space-8); align-items:flex-start;">
+        <aside class="nx-sidebar" style="width:240px;" aria-label="Filter projects">
+          <div style="padding: 0 var(--nx-space-4);">
+            <p class="nx-caption" style="margin-bottom:var(--nx-space-3);">Industry</p>
+            <label class="nx-checkbox" style="margin-bottom:var(--nx-space-2);"><input type="checkbox" class="nx-checkbox__input" checked/><span class="nx-checkbox__box"></span><span class="nx-checkbox__label">Finance (1)</span></label>
+            <label class="nx-checkbox" style="margin-bottom:var(--nx-space-2);"><input type="checkbox" class="nx-checkbox__input"/><span class="nx-checkbox__box"></span><span class="nx-checkbox__label">Medical (1)</span></label>
+            <p class="nx-caption" style="margin: var(--nx-space-5) 0 var(--nx-space-3);">Status</p>
+            <label class="nx-checkbox" style="margin-bottom:var(--nx-space-2);"><input type="checkbox" class="nx-checkbox__input"/><span class="nx-checkbox__box"></span><span class="nx-checkbox__label">Live</span></label>
+            <p class="nx-caption" style="margin: var(--nx-space-5) 0 var(--nx-space-3);">Tier</p>
+            <label class="nx-checkbox"><input type="checkbox" class="nx-checkbox__input"/><span class="nx-checkbox__box"></span><span class="nx-checkbox__label">Enterprise</span></label>
+            <p class="nx-small nx-text-muted" style="margin-top:var(--nx-space-5); padding: 0 var(--nx-space-1);">+ Service, Technology, Difficulty, Version, Components, Design System, Collections (7 more groups, same pattern)</p>
+          </div>
+        </aside>
+        <div style="flex:1;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--nx-space-4); margin-bottom:var(--nx-space-6);">
+            <div class="nx-search-box" role="search"><span class="nx-search-box__icon">⌕</span><input class="nx-search-box__input" type="search" placeholder="Search projects…"/></div>
+            <div style="display:flex; gap:var(--nx-space-3);">
+              <select class="nx-select" style="width:auto;"><option>Newest</option></select>
+              <div style="display:flex; border:1px solid var(--nx-border-subtle); border-radius:var(--nx-radius-md); overflow:hidden;">
+                <span class="nx-btn nx-btn--ghost" style="width:38px;height:38px;background:var(--nx-accent-primary);color:var(--nx-color-black);">⊞</span>
+                <span class="nx-btn nx-btn--ghost" style="width:38px;height:38px;">☰</span>
+              </div>
+            </div>
+          </div>
+          <div class="nx-grid nx-grid--3">
+            <div class="nx-card nx-card--flush nx-card--interactive nx-project-card">
+              <a class="nx-project-card__media" style="display:block;"><span class="nx-badge nx-badge--success nx-project-card__status">live</span></a>
+              <div class="nx-project-card__body"><p class="nx-caption">Finance · CRM Systems</p><h3 class="nx-h4">Aurora CRM</h3><p class="nx-small nx-clamp-2">Customer relationship platform.</p>
+                <div class="nx-tag-group" style="margin-top:var(--nx-space-3);"><span class="nx-tag">React</span></div>
+                <div class="nx-row nx-gap-2" style="margin-top:var(--nx-space-4);"><span class="nx-btn nx-btn--secondary nx-btn--sm">Quick Preview</span><span class="nx-btn nx-btn--ghost nx-btn--sm">Open Demo</span></div>
+              </div>
+            </div>
+            <div class="nx-card nx-card--flush nx-card--interactive nx-project-card">
+              <a class="nx-project-card__media" style="display:block;"><span class="nx-badge nx-badge--warning nx-project-card__status">draft</span></a>
+              <div class="nx-project-card__body"><p class="nx-caption">Hotel · Booking Systems</p><h3 class="nx-h4">Meridian Booking</h3><p class="nx-small nx-clamp-2">Reservation and guest management.</p>
+                <div class="nx-tag-group" style="margin-top:var(--nx-space-3);"><span class="nx-tag">Next.js</span></div>
+                <div class="nx-row nx-gap-2" style="margin-top:var(--nx-space-4);"><span class="nx-btn nx-btn--secondary nx-btn--sm">Quick Preview</span><span class="nx-btn nx-btn--ghost nx-btn--sm">Open Demo</span></div>
+              </div>
+            </div>
+            <div class="nx-card nx-card--flush nx-card--interactive nx-project-card">
+              <a class="nx-project-card__media" style="display:block;"><span class="nx-badge nx-badge--neutral nx-project-card__status">archived</span></a>
+              <div class="nx-project-card__body"><p class="nx-caption">Corporate · ERP Systems</p><h3 class="nx-h4">Vantage ERP</h3><p class="nx-small nx-clamp-2">Resource planning for manufacturers.</p>
+                <div class="nx-tag-group" style="margin-top:var(--nx-space-3);"><span class="nx-tag">Vue</span></div>
+                <div class="nx-row nx-gap-2" style="margin-top:var(--nx-space-4);"><span class="nx-btn nx-btn--secondary nx-btn--sm">Quick Preview</span><span class="nx-btn nx-btn--ghost nx-btn--sm">Open Demo</span></div>
+              </div>
+            </div>
+          </div>
+          <nav class="nx-pagination" style="justify-content:center; margin-top:var(--nx-space-8);">
+            <span class="nx-pagination__btn" style="opacity:.35;">‹</span>
+            <ul class="nx-pagination__list"><li><span class="nx-pagination__page nx-pagination__page--active">1</span></li><li><span class="nx-pagination__page">2</span></li></ul>
+            <span class="nx-pagination__btn">›</span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="rv-note">↑ Filter sidebar (desktop) / drawer (mobile), search + sort + grid/list toggle, project cards with Quick Preview + Open Demo, pagination.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROJECT DETAILS -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-detail">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Project Details — pages/projects/detail/index.html</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-top:var(--nx-space-6);">
+      <nav class="nx-breadcrumbs"><ol class="nx-breadcrumbs__list"><li><a class="nx-breadcrumbs__link" href="#">Home</a></li><li><span class="nx-breadcrumbs__sep">/</span><a class="nx-breadcrumbs__link" href="#">Projects</a></li><li><span class="nx-breadcrumbs__sep">/</span><span class="nx-breadcrumbs__current">Aurora CRM</span></li></ol></nav>
+    </div>
+    <section class="nx-container" style="display:grid; grid-template-columns:1fr 1.2fr; gap:var(--nx-space-8); align-items:center; padding-block:var(--nx-space-8);">
+      <div>
+        <p class="nx-caption nx-text-accent">Finance · CRM Systems</p>
+        <h1 class="nx-h1">Aurora CRM</h1>
+        <p class="nx-body-lg nx-text-secondary">Customer relationship platform for boutique investment firms.</p>
+        <div class="nx-row nx-gap-3" style="margin-top:var(--nx-space-5);"><span class="nx-badge nx-badge--success">Live</span><span class="nx-badge nx-badge--neutral">v2.4.0</span></div>
+        <div class="nx-tag-group" style="margin-top:var(--nx-space-4);"><span class="nx-tag">crm</span><span class="nx-tag">finance</span><span class="nx-tag">dashboard</span></div>
+        <div class="nx-row nx-gap-3" style="margin-top:var(--nx-space-6);"><span class="nx-btn nx-btn--primary nx-btn--lg">Open Demo</span><span class="nx-btn nx-btn--secondary nx-btn--lg">Quick Preview</span><span class="nx-btn nx-btn--ghost nx-btn--lg">View Gallery</span></div>
+      </div>
+      <div class="nx-card nx-card--flush" style="aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; color:var(--nx-text-muted);">cover image</div>
+    </section>
+    <div class="nx-container" style="display:grid; grid-template-columns:1fr 320px; gap:var(--nx-space-9); padding-block:var(--nx-space-8) var(--nx-space-10);">
+      <div>
+        <section style="margin-bottom:var(--nx-space-8);"><h2 class="nx-h3">Overview</h2><p class="nx-body-lg nx-text-secondary">A full-featured CRM built for boutique investment firms — pipeline tracking, client communications, and reporting in one workspace.</p></section>
+        <section style="margin-bottom:var(--nx-space-8);"><h2 class="nx-h3">Features</h2><ul style="color:var(--nx-text-secondary);"><li>Deal pipeline with drag-and-drop stages</li><li>Client communication timeline</li><li>Custom report builder</li></ul></section>
+        <section style="margin-bottom:var(--nx-space-8);"><h2 class="nx-h3">Technology Stack</h2><div class="nx-tag-group"><span class="nx-tag">React</span><span class="nx-tag">Supabase</span><span class="nx-tag">Tailwind CSS</span></div></section>
+        <section style="margin-bottom:var(--nx-space-8);"><h2 class="nx-h3">Project Timeline</h2>
+          <ol class="nx-timeline">
+            <li class="nx-timeline__item"><div class="nx-timeline__marker"></div><div class="nx-timeline__content"><p class="nx-caption">2026-07-10</p><h4 class="nx-h4">v2.4.0 released</h4><p class="nx-body nx-text-secondary">Performance improvements and bug fixes.</p></div></li>
+            <li class="nx-timeline__item"><div class="nx-timeline__marker"></div><div class="nx-timeline__content"><p class="nx-caption">2026-03-02</p><h4 class="nx-h4">Project started</h4><p class="nx-body nx-text-secondary">Initial architecture and data model.</p></div></li>
+          </ol>
+        </section>
+        <section><h2 class="nx-h3">Related Projects</h2><div class="nx-grid nx-grid--3"><div class="nx-card nx-card--flush nx-project-card"><div class="nx-project-card__body"><h3 class="nx-h4">Vantage ERP</h3></div></div></div></section>
+      </div>
+      <aside style="position:sticky; top:96px; align-self:start;">
+        <div class="nx-card" style="padding:var(--nx-space-5);">
+          <dl style="display:flex; flex-direction:column; gap:var(--nx-space-4);">
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--nx-border-subtle);padding-bottom:var(--nx-space-3);"><dt class="nx-caption">Industry</dt><dd class="nx-body">Finance</dd></div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--nx-border-subtle);padding-bottom:var(--nx-space-3);"><dt class="nx-caption">Tier</dt><dd class="nx-body">Enterprise</dd></div>
+            <div style="display:flex;justify-content:space-between;"><dt class="nx-caption">Estimated Price</dt><dd class="nx-body">Custom pricing</dd></div>
+          </dl>
+          <span class="nx-btn nx-btn--primary nx-btn--md nx-w-full" style="margin-top:var(--nx-space-5); display:block; text-align:center;">Open Demo</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <p class="rv-note">↑ Hero, tags, badges, gallery (not shown), overview, features, tech stack, project timeline, related projects, sticky facts sidebar.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- INDUSTRIES -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-industries">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Industries — pages/industries/index.html</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-block:var(--nx-space-6);">
+      <h1 class="nx-h2">Industries</h1><p class="nx-body-lg nx-text-secondary">14 industries · 12 projects total</p>
+      <div class="nx-grid nx-grid--auto" style="margin-top:var(--nx-space-6);">
+        <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">Finance</h3><p class="nx-small nx-text-secondary">1 project</p></a>
+        <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">Corporate</h3><p class="nx-small nx-text-secondary">2 projects</p></a>
+        <a class="nx-card nx-card--interactive nx-industry-card" href="#"><div class="nx-industry-card__icon">◆</div><h3 class="nx-h4">Legal</h3><p class="nx-small nx-text-secondary">0 projects</p></a>
+      </div>
+    </div>
+    <div class="nx-container" style="padding-block:var(--nx-space-8); border-top:1px solid var(--nx-border-subtle);">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:var(--nx-space-6);">
+        <div><p class="nx-caption nx-text-accent">Industry Spotlight</p><h2 class="nx-h3">Finance</h2><p class="nx-small nx-text-secondary">1 project in this vertical</p></div>
+        <span class="nx-btn nx-btn--secondary nx-btn--md">View in catalog</span>
+      </div>
+      <div class="nx-grid nx-grid--3"><div class="nx-card nx-card--flush nx-project-card"><div class="nx-project-card__body"><h3 class="nx-h4">Aurora CRM</h3></div></div></div>
+    </div>
+  </div>
+  <p class="rv-note">↑ Full industry grid up top, then a "spotlight" section per industry that actually has projects.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- DESIGN SYSTEMS -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-design-systems">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Design Systems — pages/design-systems/index.html</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-block:var(--nx-space-6);">
+      <h1 class="nx-h2">Design Systems</h1><p class="nx-body-lg nx-text-secondary">14 isolated design systems, one per industry vertical</p>
+      <div class="nx-grid nx-grid--auto" style="margin-top:var(--nx-space-6);">
+        <button class="nx-card nx-card--interactive nx-design-system-card" style="text-align:left;width:100%;">
+          <div class="nx-design-system-card__swatches"><span style="background:var(--nx-color-black);"></span><span style="background:var(--nx-color-dark-gray-900);"></span><span style="background:var(--nx-color-gold-500);"></span><span style="background:var(--nx-color-white);"></span></div>
+          <h3 class="nx-h4">Medical</h3><p class="nx-small nx-text-secondary">0 components · empty</p>
+        </button>
+        <button class="nx-card nx-card--interactive nx-design-system-card" style="text-align:left;width:100%;">
+          <div class="nx-design-system-card__swatches"><span style="background:var(--nx-color-black);"></span><span style="background:var(--nx-color-dark-gray-900);"></span><span style="background:var(--nx-color-gold-500);"></span><span style="background:var(--nx-color-white);"></span></div>
+          <h3 class="nx-h4">Finance</h3><p class="nx-small nx-text-secondary">0 components · empty</p>
+        </button>
+      </div>
+    </div>
+    <div class="nx-card" style="margin: 0 var(--nx-space-6) var(--nx-space-6); max-width:420px; padding:var(--nx-space-5);">
+      <p class="nx-caption">↓ Clicking a card opens this drawer</p>
+      <div class="nx-tabs" style="margin-top:var(--nx-space-4);">
+        <div class="nx-tabs__list"><span class="nx-tabs__tab" style="border-bottom-color:var(--nx-accent-primary);color:var(--nx-text-primary);">Colors</span><span class="nx-tabs__tab">Typography</span><span class="nx-tabs__tab">Components</span></div>
+        <div style="padding-top:var(--nx-space-4); display:flex; flex-direction:column; gap:var(--nx-space-3);">
+          <div style="display:flex;align-items:center;gap:var(--nx-space-3);"><span style="width:32px;height:32px;border-radius:var(--nx-radius-sm);background:var(--nx-color-black);border:1px solid var(--nx-border-subtle);"></span><span class="nx-small">Black</span></div>
+          <div style="display:flex;align-items:center;gap:var(--nx-space-3);"><span style="width:32px;height:32px;border-radius:var(--nx-radius-sm);background:var(--nx-color-gold-500);border:1px solid var(--nx-border-subtle);"></span><span class="nx-small">Gold</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="rv-note">↑ Grid of 14 systems + detail drawer (Colors / Typography / Components tabs) on click.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- COLLECTIONS -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-collections">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Collections — pages/collections/index.html</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-block:var(--nx-space-6);">
+      <h1 class="nx-h2">Collections</h1><p class="nx-body-lg nx-text-secondary">Browse projects grouped by theme rather than industry.</p>
+      <div class="nx-tabs" style="margin-top:var(--nx-space-6);">
+        <div class="nx-tabs__list" style="overflow-x:auto;">
+          <span class="nx-tabs__tab" style="border-bottom-color:var(--nx-accent-primary);color:var(--nx-text-primary);">Featured</span>
+          <span class="nx-tabs__tab">Latest</span><span class="nx-tabs__tab">Popular</span><span class="nx-tabs__tab">Enterprise</span>
+          <span class="nx-tabs__tab">Favorites</span><span class="nx-tabs__tab">Medical</span><span class="nx-tabs__tab">Construction</span>
+          <span class="nx-tabs__tab">Finance</span><span class="nx-tabs__tab">Restaurant</span><span class="nx-tabs__tab">Education</span>
+          <span class="nx-tabs__tab">AI</span><span class="nx-tabs__tab">Automation</span><span class="nx-tabs__tab">CRM</span>
+          <span class="nx-tabs__tab">Dashboard</span><span class="nx-tabs__tab">Landing Pages</span><span class="nx-tabs__tab">Websites</span>
+        </div>
+        <div class="nx-grid nx-grid--3" style="padding-top:var(--nx-space-5);">
+          <div class="nx-card nx-card--flush nx-project-card"><div class="nx-project-card__body"><h3 class="nx-h4">Aurora CRM</h3></div></div>
+          <div class="nx-card nx-card--flush nx-project-card"><div class="nx-project-card__body"><h3 class="nx-h4">Pulseline EHR</h3></div></div>
+          <div class="nx-card nx-card--flush nx-project-card"><div class="nx-project-card__body"><h3 class="nx-h4">Nova Dashboard</h3></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="rv-note">↑ 16 tabs total (scrolls horizontally on narrow screens), each panel is a project grid.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- COMPONENT EXPLORER -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-components">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">SCREEN</span><h2 class="nx-h4">Component Explorer — pages/component-explorer/index.html</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-block:var(--nx-space-6); display:flex; gap:var(--nx-space-8);">
+      <aside class="nx-sidebar" style="width:220px;">
+        <p class="nx-caption" style="padding:0 var(--nx-space-4); margin-bottom:var(--nx-space-2);">Categories</p>
+        <a class="nx-sidebar__link nx-sidebar__link--active" href="#">All Components</a>
+        <a class="nx-sidebar__link" href="#">UI Primitives (16)</a>
+        <a class="nx-sidebar__link" href="#">Cards (11)</a>
+        <a class="nx-sidebar__link" href="#">Forms (10)</a>
+      </aside>
+      <div style="flex:1;">
+        <div class="nx-search-box" role="search" style="max-width:280px; margin-bottom:var(--nx-space-5);"><span class="nx-search-box__icon">⌕</span><input class="nx-search-box__input" type="search" placeholder="Search components…"/></div>
+        <div class="nx-grid nx-grid--auto">
+          <a class="nx-card nx-card--interactive nx-component-card" href="#"><div class="nx-component-card__preview"><span class="nx-btn nx-btn--primary nx-btn--sm">Button</span></div><div class="nx-component-card__meta"><h3 class="nx-h4">Button</h3><span class="nx-badge nx-badge--neutral">UI</span></div></a>
+          <a class="nx-card nx-card--interactive nx-component-card" href="#"><div class="nx-component-card__preview"><span class="nx-badge nx-badge--success">Badge</span></div><div class="nx-component-card__meta"><h3 class="nx-h4">Badge</h3><span class="nx-badge nx-badge--neutral">UI</span></div></a>
+          <a class="nx-card nx-card--interactive nx-component-card" href="#"><div class="nx-component-card__preview"><span class="nx-small nx-text-muted">Data Table</span></div><div class="nx-component-card__meta"><h3 class="nx-h4">Data Table</h3><span class="nx-badge nx-badge--neutral">UI</span></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="rv-note">↑ Category sidebar + search + grid. Clicking a card opens a drawer with Preview / Usage / Documentation tabs (not shown here).</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- DESIGN TOKENS -->
+<!-- ============================================================ -->
+<section class="rv-screen" id="s-tokens">
+  <div class="rv-screen__label"><span class="nx-badge nx-badge--accent">REFERENCE</span><h2 class="nx-h4">Design Tokens — core/css/tokens.css</h2></div>
+  <div class="rv-screen__frame">
+    <div class="nx-container" style="padding-block:var(--nx-space-7);">
+      <h3 class="nx-h4" style="margin-bottom:var(--nx-space-4);">Brand Colors</h3>
+      <div class="nx-row nx-gap-4" style="margin-bottom:var(--nx-space-7);">
+        <div style="text-align:center;"><span style="display:block;width:64px;height:64px;border-radius:var(--nx-radius-md);background:var(--nx-color-black);border:1px solid var(--nx-border-subtle);"></span><p class="nx-small" style="margin-top:var(--nx-space-2);">Black</p></div>
+        <div style="text-align:center;"><span style="display:block;width:64px;height:64px;border-radius:var(--nx-radius-md);background:var(--nx-color-dark-gray-900);"></span><p class="nx-small" style="margin-top:var(--nx-space-2);">Dark Gray</p></div>
+        <div style="text-align:center;"><span style="display:block;width:64px;height:64px;border-radius:var(--nx-radius-md);background:var(--nx-color-gold-500);"></span><p class="nx-small" style="margin-top:var(--nx-space-2);">Gold</p></div>
+        <div style="text-align:center;"><span style="display:block;width:64px;height:64px;border-radius:var(--nx-radius-md);background:var(--nx-color-white);"></span><p class="nx-small" style="margin-top:var(--nx-space-2);">White</p></div>
+      </div>
+      <h3 class="nx-h4" style="margin-bottom:var(--nx-space-4);">Typography Scale</h3>
+      <p class="nx-display" style="margin-bottom:var(--nx-space-2);">Display</p>
+      <p class="nx-h1" style="margin-bottom:var(--nx-space-2);">Heading 1</p>
+      <p class="nx-h2" style="margin-bottom:var(--nx-space-2);">Heading 2</p>
+      <p class="nx-h3" style="margin-bottom:var(--nx-space-2);">Heading 3</p>
+      <p class="nx-h4" style="margin-bottom:var(--nx-space-2);">Heading 4</p>
+      <p class="nx-body-lg" style="margin-bottom:var(--nx-space-2);">Body large text</p>
+      <p class="nx-body" style="margin-bottom:var(--nx-space-2);">Body text</p>
+      <p class="nx-small" style="margin-bottom:var(--nx-space-2);">Small text</p>
+      <p class="nx-caption">CAPTION TEXT</p>
+    </div>
+  </div>
+  <p class="rv-note">↑ The full palette and type scale everything above is built from — useful if any feedback is about color or type rather than a specific screen.</p>
+</section>
+
+<div class="nx-container" style="padding-block: var(--nx-space-9); text-align:center; border-top:1px solid var(--nx-border-subtle);">
+  <p class="nx-small nx-text-muted">End of review document — jump back to the top to compare sections, or scroll up using the bar.</p>
+</div>
+
+</body>
+</html>

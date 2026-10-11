@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════════════════════
+   NEXORA Portfolio — Custom Cursor Styles
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('variables.css');
+
+/* Hide custom cursor on touch devices */
+@media (pointer: fine) {
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .custom-cursor.active {
+    opacity: 1;
+  }
+
+  .cursor-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  }
+
+  .cursor-ring {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  }
+
+  /* Interactive state */
+  .custom-cursor.cursor--interactive .cursor-dot {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  .custom-cursor.cursor--interactive .cursor-ring {
+    width: 48px;
+    height: 48px;
+    border-color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.08);
+  }
+
+  /* Hide default cursor when custom is active */
+  body:has(.custom-cursor.active) {
+    cursor: none;
+  }
+
+  body:has(.custom-cursor.active) a,
+  body:has(.custom-cursor.active) button,
+  body:has(.custom-cursor.active) [role="button"],
+  body:has(.custom-cursor.active) input,
+  body:has(.custom-cursor.active) textarea,
+  body:has(.custom-cursor.active) select {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}

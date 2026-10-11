@@ -1,0 +1,10 @@
+{
+  "version": "0.2.0",
+  "updatedAt": "2026-07-15",
+  "primary": [
+    { "id": "home", "label": "Home", "path": "/index.html" },
+    { "id": "components", "label": "Components", "path": "/pages/component-explorer/index.html" }
+  ],
+  "footer": [],
+  "utility": []
+}

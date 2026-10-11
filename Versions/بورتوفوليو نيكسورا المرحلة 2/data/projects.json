@@ -1,0 +1,37 @@
+{
+  "$schema": "./schemas/project.schema.json",
+  "version": "0.1.0",
+  "updatedAt": null,
+  "count": 0,
+  "projects": [
+    {
+      "_comment": "This object documents the required shape for every future project entry. Remove it once real projects are added.",
+      "id": "",
+      "slug": "",
+      "title": "",
+      "tagline": "",
+      "description": "",
+      "version": "1.0.0",
+      "status": "draft",
+      "tier": "",
+      "difficulty": "",
+      "industry": "",
+      "service": "",
+      "tags": [],
+      "technologies": [],
+      "componentsUsed": [],
+      "relatedProjects": [],
+      "media": {
+        "thumbnail": "",
+        "cover": "",
+        "preview": "",
+        "gallery": []
+      },
+      "path": "/projects/",
+      "readme": "README.md",
+      "createdAt": "",
+      "updatedAt": "",
+      "futureUpdates": []
+    }
+  ]
+}
